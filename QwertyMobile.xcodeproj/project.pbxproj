@@ -15,6 +15,9 @@
 		2CDAB9B9246EF6E800F7E803 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CDAB9B7246EF6E800F7E803 /* LaunchScreen.storyboard */; };
 		2CDAB9C4246EF6E800F7E803 /* QwertyMobileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDAB9C3246EF6E800F7E803 /* QwertyMobileTests.swift */; };
 		2CDAB9CF246EF6E800F7E803 /* QwertyMobileUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDAB9CE246EF6E800F7E803 /* QwertyMobileUITests.swift */; };
+		2CDAB9E3246EF70100F7E803 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDAB9E2246EF70100F7E803 /* ShareViewController.swift */; };
+		2CDAB9E6246EF70100F7E803 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CDAB9E4246EF70100F7E803 /* MainInterface.storyboard */; };
+		2CDAB9EA246EF70100F7E803 /* QwertyShare.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 2CDAB9E0246EF70100F7E803 /* QwertyShare.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,7 +35,28 @@
 			remoteGlobalIDString = 2CDAB9A8246EF6E700F7E803;
 			remoteInfo = QwertyMobile;
 		};
+		2CDAB9E8246EF70100F7E803 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2CDAB9A1246EF6E700F7E803 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2CDAB9DF246EF70100F7E803;
+			remoteInfo = QwertyShare;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		2CDAB9EE246EF70100F7E803 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				2CDAB9EA246EF70100F7E803 /* QwertyShare.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		2CDAB9A9246EF6E700F7E803 /* QwertyMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QwertyMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -49,6 +73,10 @@
 		2CDAB9CA246EF6E800F7E803 /* QwertyMobileUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QwertyMobileUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CDAB9CE246EF6E800F7E803 /* QwertyMobileUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QwertyMobileUITests.swift; sourceTree = "<group>"; };
 		2CDAB9D0246EF6E800F7E803 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2CDAB9E0246EF70100F7E803 /* QwertyShare.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = QwertyShare.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		2CDAB9E2246EF70100F7E803 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
+		2CDAB9E5246EF70100F7E803 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		2CDAB9E7246EF70100F7E803 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +101,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2CDAB9DD246EF70100F7E803 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -82,6 +117,7 @@
 				2CDAB9AB246EF6E700F7E803 /* QwertyMobile */,
 				2CDAB9C2246EF6E800F7E803 /* QwertyMobileTests */,
 				2CDAB9CD246EF6E800F7E803 /* QwertyMobileUITests */,
+				2CDAB9E1246EF70100F7E803 /* QwertyShare */,
 				2CDAB9AA246EF6E700F7E803 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -92,6 +128,7 @@
 				2CDAB9A9246EF6E700F7E803 /* QwertyMobile.app */,
 				2CDAB9BF246EF6E800F7E803 /* QwertyMobileTests.xctest */,
 				2CDAB9CA246EF6E800F7E803 /* QwertyMobileUITests.xctest */,
+				2CDAB9E0246EF70100F7E803 /* QwertyShare.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -136,6 +173,16 @@
 			path = QwertyMobileUITests;
 			sourceTree = "<group>";
 		};
+		2CDAB9E1246EF70100F7E803 /* QwertyShare */ = {
+			isa = PBXGroup;
+			children = (
+				2CDAB9E2246EF70100F7E803 /* ShareViewController.swift */,
+				2CDAB9E4246EF70100F7E803 /* MainInterface.storyboard */,
+				2CDAB9E7246EF70100F7E803 /* Info.plist */,
+			);
+			path = QwertyShare;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -146,10 +193,12 @@
 				2CDAB9A5246EF6E700F7E803 /* Sources */,
 				2CDAB9A6246EF6E700F7E803 /* Frameworks */,
 				2CDAB9A7246EF6E700F7E803 /* Resources */,
+				2CDAB9EE246EF70100F7E803 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				2CDAB9E9246EF70100F7E803 /* PBXTargetDependency */,
 			);
 			name = QwertyMobile;
 			productName = QwertyMobile;
@@ -192,6 +241,23 @@
 			productReference = 2CDAB9CA246EF6E800F7E803 /* QwertyMobileUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		2CDAB9DF246EF70100F7E803 /* QwertyShare */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2CDAB9EB246EF70100F7E803 /* Build configuration list for PBXNativeTarget "QwertyShare" */;
+			buildPhases = (
+				2CDAB9DC246EF70100F7E803 /* Sources */,
+				2CDAB9DD246EF70100F7E803 /* Frameworks */,
+				2CDAB9DE246EF70100F7E803 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = QwertyShare;
+			productName = QwertyShare;
+			productReference = 2CDAB9E0246EF70100F7E803 /* QwertyShare.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -213,6 +279,9 @@
 						CreatedOnToolsVersion = 11.4.1;
 						TestTargetID = 2CDAB9A8246EF6E700F7E803;
 					};
+					2CDAB9DF246EF70100F7E803 = {
+						CreatedOnToolsVersion = 11.4.1;
+					};
 				};
 			};
 			buildConfigurationList = 2CDAB9A4246EF6E700F7E803 /* Build configuration list for PBXProject "QwertyMobile" */;
@@ -231,6 +300,7 @@
 				2CDAB9A8246EF6E700F7E803 /* QwertyMobile */,
 				2CDAB9BE246EF6E800F7E803 /* QwertyMobileTests */,
 				2CDAB9C9246EF6E800F7E803 /* QwertyMobileUITests */,
+				2CDAB9DF246EF70100F7E803 /* QwertyShare */,
 			);
 		};
 /* End PBXProject section */
@@ -257,6 +327,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2CDAB9DE246EF70100F7E803 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2CDAB9E6246EF70100F7E803 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,6 +367,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2CDAB9DC246EF70100F7E803 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2CDAB9E3246EF70100F7E803 /* ShareViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -302,6 +388,11 @@
 			target = 2CDAB9A8246EF6E700F7E803 /* QwertyMobile */;
 			targetProxy = 2CDAB9CB246EF6E800F7E803 /* PBXContainerItemProxy */;
 		};
+		2CDAB9E9246EF70100F7E803 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2CDAB9DF246EF70100F7E803 /* QwertyShare */;
+			targetProxy = 2CDAB9E8246EF70100F7E803 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -311,6 +402,14 @@
 				2CDAB9B8246EF6E800F7E803 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		2CDAB9E4246EF70100F7E803 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2CDAB9E5246EF70100F7E803 /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -433,6 +532,7 @@
 		2CDAB9D4246EF6E800F7E803 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"QwertyMobile/Preview Content\"";
@@ -453,6 +553,7 @@
 		2CDAB9D5246EF6E800F7E803 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"QwertyMobile/Preview Content\"";
@@ -554,6 +655,44 @@
 			};
 			name = Release;
 		};
+		2CDAB9EC246EF70100F7E803 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CLE684Z9F2;
+				INFOPLIST_FILE = QwertyShare/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = UnitedTomatoCans.QwertyMobile.QwertyShare;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2CDAB9ED246EF70100F7E803 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CLE684Z9F2;
+				INFOPLIST_FILE = QwertyShare/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = UnitedTomatoCans.QwertyMobile.QwertyShare;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -589,6 +728,15 @@
 			buildConfigurations = (
 				2CDAB9DA246EF6E800F7E803 /* Debug */,
 				2CDAB9DB246EF6E800F7E803 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2CDAB9EB246EF70100F7E803 /* Build configuration list for PBXNativeTarget "QwertyShare" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2CDAB9EC246EF70100F7E803 /* Debug */,
+				2CDAB9ED246EF70100F7E803 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
