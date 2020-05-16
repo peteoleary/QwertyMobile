@@ -9,15 +9,31 @@
 /* Begin PBXBuildFile section */
 		2CDAB9AD246EF6E700F7E803 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDAB9AC246EF6E700F7E803 /* AppDelegate.swift */; };
 		2CDAB9AF246EF6E700F7E803 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDAB9AE246EF6E700F7E803 /* SceneDelegate.swift */; };
-		2CDAB9B1246EF6E700F7E803 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDAB9B0246EF6E700F7E803 /* ContentView.swift */; };
 		2CDAB9B3246EF6E800F7E803 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CDAB9B2246EF6E800F7E803 /* Assets.xcassets */; };
 		2CDAB9B6246EF6E800F7E803 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CDAB9B5246EF6E800F7E803 /* Preview Assets.xcassets */; };
 		2CDAB9B9246EF6E800F7E803 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CDAB9B7246EF6E800F7E803 /* LaunchScreen.storyboard */; };
 		2CDAB9C4246EF6E800F7E803 /* QwertyMobileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDAB9C3246EF6E800F7E803 /* QwertyMobileTests.swift */; };
 		2CDAB9CF246EF6E800F7E803 /* QwertyMobileUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDAB9CE246EF6E800F7E803 /* QwertyMobileUITests.swift */; };
 		2CDAB9E3246EF70100F7E803 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDAB9E2246EF70100F7E803 /* ShareViewController.swift */; };
-		2CDAB9E6246EF70100F7E803 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CDAB9E4246EF70100F7E803 /* MainInterface.storyboard */; };
 		2CDAB9EA246EF70100F7E803 /* QwertyShare.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 2CDAB9E0246EF70100F7E803 /* QwertyShare.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		2CDAB9F0246F0DC300F7E803 /* RestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDAB9EF246F0DC300F7E803 /* RestManager.swift */; };
+		2CDAB9F1246F0DC300F7E803 /* RestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDAB9EF246F0DC300F7E803 /* RestManager.swift */; };
+		2CDAB9F324702DF600F7E803 /* QRCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDAB9F224702DF600F7E803 /* QRCode.swift */; };
+		2CDAB9F424702DF600F7E803 /* QRCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDAB9F224702DF600F7E803 /* QRCode.swift */; };
+		2CDAB9F72470351100F7E803 /* Pepper Instagram.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2CDAB9F62470351100F7E803 /* Pepper Instagram.jpg */; };
+		2CDAB9F82470351100F7E803 /* Pepper Instagram.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2CDAB9F62470351100F7E803 /* Pepper Instagram.jpg */; };
+		2CDAB9FA2470573400F7E803 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDAB9F92470573400F7E803 /* MainView.swift */; };
+		2CDAB9FB2470573400F7E803 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDAB9F92470573400F7E803 /* MainView.swift */; };
+		2CDAB9FD247058AD00F7E803 /* QRCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDAB9FC247058AD00F7E803 /* QRCodeView.swift */; };
+		2CDAB9FE247058AD00F7E803 /* QRCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDAB9FC247058AD00F7E803 /* QRCodeView.swift */; };
+		2CDABA002470636700F7E803 /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDAB9FF2470636700F7E803 /* ViewRouter.swift */; };
+		2CDABA012470636700F7E803 /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDAB9FF2470636700F7E803 /* ViewRouter.swift */; };
+		2CDABA0324706BA300F7E803 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDABA0224706BA300F7E803 /* LoginView.swift */; };
+		2CDABA0424706BA300F7E803 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDABA0224706BA300F7E803 /* LoginView.swift */; };
+		2CDABA06247090D400F7E803 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDABA05247090D400F7E803 /* User.swift */; };
+		2CDABA07247090D400F7E803 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDABA05247090D400F7E803 /* User.swift */; };
+		2CDABA0924709D0700F7E803 /* QwertyAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDABA0824709D0700F7E803 /* QwertyAPI.swift */; };
+		2CDABA0A24709D0700F7E803 /* QwertyAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDABA0824709D0700F7E803 /* QwertyAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,13 +50,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 2CDAB9A8246EF6E700F7E803;
 			remoteInfo = QwertyMobile;
-		};
-		2CDAB9E8246EF70100F7E803 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2CDAB9A1246EF6E700F7E803 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 2CDAB9DF246EF70100F7E803;
-			remoteInfo = QwertyShare;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -62,7 +71,6 @@
 		2CDAB9A9246EF6E700F7E803 /* QwertyMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QwertyMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CDAB9AC246EF6E700F7E803 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2CDAB9AE246EF6E700F7E803 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		2CDAB9B0246EF6E700F7E803 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		2CDAB9B2246EF6E800F7E803 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2CDAB9B5246EF6E800F7E803 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2CDAB9B8246EF6E800F7E803 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -75,8 +83,16 @@
 		2CDAB9D0246EF6E800F7E803 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2CDAB9E0246EF70100F7E803 /* QwertyShare.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = QwertyShare.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CDAB9E2246EF70100F7E803 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
-		2CDAB9E5246EF70100F7E803 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		2CDAB9E7246EF70100F7E803 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2CDAB9EF246F0DC300F7E803 /* RestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestManager.swift; sourceTree = "<group>"; };
+		2CDAB9F224702DF600F7E803 /* QRCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCode.swift; sourceTree = "<group>"; };
+		2CDAB9F62470351100F7E803 /* Pepper Instagram.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "Pepper Instagram.jpg"; path = "../../../../Downloads/Pepper Instagram.jpg"; sourceTree = "<group>"; };
+		2CDAB9F92470573400F7E803 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		2CDAB9FC247058AD00F7E803 /* QRCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeView.swift; sourceTree = "<group>"; };
+		2CDAB9FF2470636700F7E803 /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
+		2CDABA0224706BA300F7E803 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		2CDABA05247090D400F7E803 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		2CDABA0824709D0700F7E803 /* QwertyAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QwertyAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +130,7 @@
 		2CDAB9A0246EF6E700F7E803 = {
 			isa = PBXGroup;
 			children = (
+				2CDAB9F524702E2A00F7E803 /* Shared */,
 				2CDAB9AB246EF6E700F7E803 /* QwertyMobile */,
 				2CDAB9C2246EF6E800F7E803 /* QwertyMobileTests */,
 				2CDAB9CD246EF6E800F7E803 /* QwertyMobileUITests */,
@@ -136,10 +153,13 @@
 		2CDAB9AB246EF6E700F7E803 /* QwertyMobile */ = {
 			isa = PBXGroup;
 			children = (
+				2CDAB9FF2470636700F7E803 /* ViewRouter.swift */,
+				2CDAB9FC247058AD00F7E803 /* QRCodeView.swift */,
+				2CDAB9F92470573400F7E803 /* MainView.swift */,
 				2CDAB9AC246EF6E700F7E803 /* AppDelegate.swift */,
 				2CDAB9AE246EF6E700F7E803 /* SceneDelegate.swift */,
-				2CDAB9B0246EF6E700F7E803 /* ContentView.swift */,
 				2CDAB9B2246EF6E800F7E803 /* Assets.xcassets */,
+				2CDAB9F62470351100F7E803 /* Pepper Instagram.jpg */,
 				2CDAB9B7246EF6E800F7E803 /* LaunchScreen.storyboard */,
 				2CDAB9BA246EF6E800F7E803 /* Info.plist */,
 				2CDAB9B4246EF6E800F7E803 /* Preview Content */,
@@ -177,10 +197,21 @@
 			isa = PBXGroup;
 			children = (
 				2CDAB9E2246EF70100F7E803 /* ShareViewController.swift */,
-				2CDAB9E4246EF70100F7E803 /* MainInterface.storyboard */,
 				2CDAB9E7246EF70100F7E803 /* Info.plist */,
 			);
 			path = QwertyShare;
+			sourceTree = "<group>";
+		};
+		2CDAB9F524702E2A00F7E803 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				2CDAB9F224702DF600F7E803 /* QRCode.swift */,
+				2CDABA0824709D0700F7E803 /* QwertyAPI.swift */,
+				2CDABA0224706BA300F7E803 /* LoginView.swift */,
+				2CDAB9EF246F0DC300F7E803 /* RestManager.swift */,
+				2CDABA05247090D400F7E803 /* User.swift */,
+			);
+			path = Shared;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,7 +229,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				2CDAB9E9246EF70100F7E803 /* PBXTargetDependency */,
 			);
 			name = QwertyMobile;
 			productName = QwertyMobile;
@@ -311,6 +341,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2CDAB9B9246EF6E800F7E803 /* LaunchScreen.storyboard in Resources */,
+				2CDAB9F72470351100F7E803 /* Pepper Instagram.jpg in Resources */,
 				2CDAB9B6246EF6E800F7E803 /* Preview Assets.xcassets in Resources */,
 				2CDAB9B3246EF6E800F7E803 /* Assets.xcassets in Resources */,
 			);
@@ -334,7 +365,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2CDAB9E6246EF70100F7E803 /* MainInterface.storyboard in Resources */,
+				2CDAB9F82470351100F7E803 /* Pepper Instagram.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,8 +377,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				2CDAB9AD246EF6E700F7E803 /* AppDelegate.swift in Sources */,
+				2CDAB9FA2470573400F7E803 /* MainView.swift in Sources */,
+				2CDABA0924709D0700F7E803 /* QwertyAPI.swift in Sources */,
+				2CDAB9F0246F0DC300F7E803 /* RestManager.swift in Sources */,
+				2CDAB9FD247058AD00F7E803 /* QRCodeView.swift in Sources */,
 				2CDAB9AF246EF6E700F7E803 /* SceneDelegate.swift in Sources */,
-				2CDAB9B1246EF6E700F7E803 /* ContentView.swift in Sources */,
+				2CDABA06247090D400F7E803 /* User.swift in Sources */,
+				2CDAB9F324702DF600F7E803 /* QRCode.swift in Sources */,
+				2CDABA0324706BA300F7E803 /* LoginView.swift in Sources */,
+				2CDABA002470636700F7E803 /* ViewRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -372,6 +410,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				2CDAB9E3246EF70100F7E803 /* ShareViewController.swift in Sources */,
+				2CDABA0424706BA300F7E803 /* LoginView.swift in Sources */,
+				2CDAB9FB2470573400F7E803 /* MainView.swift in Sources */,
+				2CDAB9FE247058AD00F7E803 /* QRCodeView.swift in Sources */,
+				2CDABA0A24709D0700F7E803 /* QwertyAPI.swift in Sources */,
+				2CDABA07247090D400F7E803 /* User.swift in Sources */,
+				2CDABA012470636700F7E803 /* ViewRouter.swift in Sources */,
+				2CDAB9F1246F0DC300F7E803 /* RestManager.swift in Sources */,
+				2CDAB9F424702DF600F7E803 /* QRCode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -388,11 +434,6 @@
 			target = 2CDAB9A8246EF6E700F7E803 /* QwertyMobile */;
 			targetProxy = 2CDAB9CB246EF6E800F7E803 /* PBXContainerItemProxy */;
 		};
-		2CDAB9E9246EF70100F7E803 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 2CDAB9DF246EF70100F7E803 /* QwertyShare */;
-			targetProxy = 2CDAB9E8246EF70100F7E803 /* PBXContainerItemProxy */;
-		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -402,14 +443,6 @@
 				2CDAB9B8246EF6E800F7E803 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		2CDAB9E4246EF70100F7E803 /* MainInterface.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2CDAB9E5246EF70100F7E803 /* Base */,
-			);
-			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
