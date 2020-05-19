@@ -20,7 +20,7 @@ struct MainView : View {
                 if viewRouter.currentPage == "login" {
                     LoginView(viewRouter: viewRouter)
                 } else if viewRouter.currentPage == "qrcode" {
-                    QRCodeView(viewRouter: viewRouter)
+                    QRCodeView(viewRouter: viewRouter, qrcode_store: QRCodeStore())
                 }
             }
     }

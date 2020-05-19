@@ -8,13 +8,22 @@
 
 import Foundation
 
-struct User: Decodable {
+struct UserData: Codable {
+    var data: User
+}
+
+// "{\"data\":{\"id\":18,\"email\":\"pete@timelight.com\",\"provider\":\"email\",\"uid\":\"pete@timelight.com\",\"allow_password_change\":false,\"first_name\":\"Peter\",\"last_name\":\"O\'Leary\",\"nickname\":null,\"image\":null}}"
+
+struct User: Codable {
     var id:Int
     var first_name:String
     var last_name:String
     var email:String
-    var nickname:String
-    var image :String
+    var nickname:String?
+    var image :String?
+    var provider :String
+    var uid:String
+    var allow_password_change:Bool
 }
 
 struct Credentials {

@@ -63,35 +63,31 @@ class RestManager {
                      withHttpMethod httpMethod: HttpMethod,
                      completion: @escaping (_ result: Results) -> Void) {
 
-        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
-            let targetURL = self?.addURLQueryParameters(toURL: url)
-            let httpBody = self?.getHttpBody()
-            guard let request = self?.prepareRequest(withURL: targetURL, httpBody: httpBody, httpMethod: httpMethod) else {
-                completion(Results(withError: CustomError.failedToCreateRequest))
-                return
-            }
-
-            let sessionConfiguration = URLSessionConfiguration.default
-            let session = URLSession(configuration: sessionConfiguration)
-            let task = session.dataTask(with: request) { (data, response, error) in
-                completion(Results(withData: data,
-                                   response: Response(fromURLResponse: response),
-                                   error: error))
-            }
-            task.resume()
+        let targetURL = self.addURLQueryParameters(toURL: url)
+        let httpBody = self.getHttpBody()
+        guard let request = self.prepareRequest(withURL: targetURL, httpBody: httpBody, httpMethod: httpMethod) else {
+            completion(Results(withError: CustomError.failedToCreateRequest))
+            return
         }
+
+        let sessionConfiguration = URLSessionConfiguration.default
+        let session = URLSession(configuration: sessionConfiguration)
+        let task = session.dataTask(with: request) { (data, response, error) in
+            completion(Results(withData: data,
+                               response: Response(fromURLResponse: response),
+                               error: error))
+        }
+        task.resume()
     }
     
     public func getData(fromURL url: URL, completion: @escaping (_ data: Data?) -> Void) {
-        DispatchQueue.global(qos: .userInitiated).async {
-            let sessionConfiguration = URLSessionConfiguration.default
-            let session = URLSession(configuration: sessionConfiguration)
-            let task = session.dataTask(with: url, completionHandler: { (data, response, error) in
-                guard let data = data else { completion(nil); return }
-                completion(data)
-            })
-            task.resume()
-        }
+        let sessionConfiguration = URLSessionConfiguration.default
+        let session = URLSession(configuration: sessionConfiguration)
+        let task = session.dataTask(with: url, completionHandler: { (data, response, error) in
+            guard let data = data else { completion(nil); return }
+            completion(data)
+        })
+        task.resume()
     }
 }
 
@@ -121,6 +117,10 @@ extension RestManager {
 
         func totalItems() -> Int {
             return values.count
+        }
+        
+        subscript(key: String) -> String? {
+            return values[key]
         }
     }
     

@@ -10,14 +10,11 @@ import SwiftUI
 
 let lightGreyColor = Color(red: 239.0/255.0, green: 243.0/255.0, blue: 244.0/255.0, opacity: 1.0)
 
-let storedUsername = "Pete_oleary"
-let storedPassword = "astroman"
-
 struct LoginView : View {
     
     @ObservedObject var viewRouter: ViewRouter
     
-    @State var username: String = ""
+    @State var email: String = ""
     @State var password: String = ""
     
     @State var authenticationDidFail: Bool = false
@@ -26,7 +23,7 @@ struct LoginView : View {
         VStack {
             WelcomeText()
             UserImage()
-            UserNameTextField(username: $username)
+            EmailTextField(email: $email)
             PasswordSecureField(password: $password)
             if authenticationDidFail {
                 Text("Information not correct. Try again.")
@@ -36,16 +33,21 @@ struct LoginView : View {
                         
             Button(action: {
                 
-                let qwerty = QwertyAPI()
+                let api = QwertyAPI()
                 
-                let credentials: Credentials? = qwerty.login(username: self.username, password: self.password)
-                
-                if credentials != nil {
-                        self.viewRouter.credentials = credentials
-                        }
-                else {
-                        self.authenticationDidFail = true
+                api.login(email: self.email, password: self.password) { (credentials: Credentials?, loggedInUser: UserData?) in
+                    DispatchQueue.main.async {
+                        if credentials != nil {
+                                self.viewRouter.credentials = credentials
+                                self.viewRouter.currentPage = "qrcode"
+                                }
+                        else {
+                                self.authenticationDidFail = true
+                            }
                     }
+                    
+                }
+                
                 }
             ) {
                 LoginButtonContent()
@@ -93,10 +95,10 @@ struct LoginButtonContent: View {
     }
 }
 
-struct UserNameTextField: View {
-    @Binding var username: String
+struct EmailTextField: View {
+    @Binding var email: String
     var body: some View {
-        TextField("Username", text: $username).padding()
+        TextField("Email", text: $email).padding()
             .background(lightGreyColor)
             .cornerRadius(5.0)
             .padding(.bottom, 20)

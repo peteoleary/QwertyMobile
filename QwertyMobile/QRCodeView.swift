@@ -13,6 +13,10 @@ struct QRCodeView : View {
     
     @ObservedObject var viewRouter: ViewRouter
     
+    @State var qrcode_store: QRCodeStore
+    
+    // TODO: load QR code list
+    
     var body: some View {
         VStack {
             Text("Welcome!")
@@ -23,7 +27,7 @@ struct QRCodeView : View {
 #if DEBUG
 struct QRCodeView_Previews : PreviewProvider {
     static var previews: some View {
-        QRCodeView(viewRouter: ViewRouter())
+        QRCodeView(viewRouter: ViewRouter(), qrcode_store: QRCodeStore())
     }
 }
 #endif

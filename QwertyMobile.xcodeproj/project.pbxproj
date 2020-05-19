@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C83298924731E2F004B9CBD /* QRCodeStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C83298824731E2F004B9CBD /* QRCodeStore.swift */; };
+		2C83298A24731E2F004B9CBD /* QRCodeStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C83298824731E2F004B9CBD /* QRCodeStore.swift */; };
 		2CDAB9AD246EF6E700F7E803 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDAB9AC246EF6E700F7E803 /* AppDelegate.swift */; };
 		2CDAB9AF246EF6E700F7E803 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDAB9AE246EF6E700F7E803 /* SceneDelegate.swift */; };
 		2CDAB9B3246EF6E800F7E803 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CDAB9B2246EF6E800F7E803 /* Assets.xcassets */; };
@@ -34,6 +36,8 @@
 		2CDABA07247090D400F7E803 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDABA05247090D400F7E803 /* User.swift */; };
 		2CDABA0924709D0700F7E803 /* QwertyAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDABA0824709D0700F7E803 /* QwertyAPI.swift */; };
 		2CDABA0A24709D0700F7E803 /* QwertyAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDABA0824709D0700F7E803 /* QwertyAPI.swift */; };
+		2CDABA142472DB2400F7E803 /* QRCodeViewRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDABA132472DB2400F7E803 /* QRCodeViewRow.swift */; };
+		2CDABA152472DB2400F7E803 /* QRCodeViewRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDABA132472DB2400F7E803 /* QRCodeViewRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +72,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2C83298824731E2F004B9CBD /* QRCodeStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeStore.swift; sourceTree = "<group>"; };
 		2CDAB9A9246EF6E700F7E803 /* QwertyMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QwertyMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CDAB9AC246EF6E700F7E803 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2CDAB9AE246EF6E700F7E803 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -93,6 +98,7 @@
 		2CDABA0224706BA300F7E803 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		2CDABA05247090D400F7E803 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		2CDABA0824709D0700F7E803 /* QwertyAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QwertyAPI.swift; sourceTree = "<group>"; };
+		2CDABA132472DB2400F7E803 /* QRCodeViewRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeViewRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,7 +215,9 @@
 				2CDABA0824709D0700F7E803 /* QwertyAPI.swift */,
 				2CDABA0224706BA300F7E803 /* LoginView.swift */,
 				2CDAB9EF246F0DC300F7E803 /* RestManager.swift */,
+				2CDABA132472DB2400F7E803 /* QRCodeViewRow.swift */,
 				2CDABA05247090D400F7E803 /* User.swift */,
+				2C83298824731E2F004B9CBD /* QRCodeStore.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -377,6 +385,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2CDAB9AD246EF6E700F7E803 /* AppDelegate.swift in Sources */,
+				2CDABA142472DB2400F7E803 /* QRCodeViewRow.swift in Sources */,
 				2CDAB9FA2470573400F7E803 /* MainView.swift in Sources */,
 				2CDABA0924709D0700F7E803 /* QwertyAPI.swift in Sources */,
 				2CDAB9F0246F0DC300F7E803 /* RestManager.swift in Sources */,
@@ -386,6 +395,7 @@
 				2CDAB9F324702DF600F7E803 /* QRCode.swift in Sources */,
 				2CDABA0324706BA300F7E803 /* LoginView.swift in Sources */,
 				2CDABA002470636700F7E803 /* ViewRouter.swift in Sources */,
+				2C83298924731E2F004B9CBD /* QRCodeStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,7 +423,9 @@
 				2CDABA0424706BA300F7E803 /* LoginView.swift in Sources */,
 				2CDAB9FB2470573400F7E803 /* MainView.swift in Sources */,
 				2CDAB9FE247058AD00F7E803 /* QRCodeView.swift in Sources */,
+				2C83298A24731E2F004B9CBD /* QRCodeStore.swift in Sources */,
 				2CDABA0A24709D0700F7E803 /* QwertyAPI.swift in Sources */,
+				2CDABA152472DB2400F7E803 /* QRCodeViewRow.swift in Sources */,
 				2CDABA07247090D400F7E803 /* User.swift in Sources */,
 				2CDABA012470636700F7E803 /* ViewRouter.swift in Sources */,
 				2CDAB9F1246F0DC300F7E803 /* RestManager.swift in Sources */,
