@@ -13,19 +13,16 @@ class QRCodeStore: ObservableObject {
     @Published private(set) var qrcodes: [QRCode] = []
     
     var api:QwertyAPI
-    init() {
-        self.api = QwertyAPI()
+    init(credentials: Credentials?) {
+        self.api = QwertyAPI(credentials: credentials)
     }
 
-    func fetch() {
-        api.getQRCodes() { (credentials: Credentials?, qrCodeData: QRCodeData?) in
+    func fetch() throws {
+        try api.getQRCodes() { (credentials: Credentials?, qrCodeData: QRCodeData?) in
             DispatchQueue.main.async {
                 if qrCodeData != nil {
                     self.qrcodes = qrCodeData!.data
-                        }
-                else {
-                        // TODO: something here
-                    }
+                }
             }
         }
     }

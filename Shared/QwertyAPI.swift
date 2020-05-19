@@ -8,6 +8,11 @@
 
 import Foundation
 
+enum QwertyAPIError: Error {
+    case credentialsRequired
+}
+
+
 class QwertyAPI {
     
     var restManager: RestManager
@@ -26,12 +31,17 @@ class QwertyAPI {
         self.restManager.requestHttpHeaders.add(value: "application/json", forKey: "Content-Type")
     }
     
-    private func addAuthenticatedHeaders() {
+    private func addAuthenticatedHeaders() throws {
+        
+        if self.credentials == nil {
+            throw QwertyAPIError.credentialsRequired
+        }
+        
         self.addAnonymousHeaders()
     }
     
     private func handleResults<T:Codable>(url: URL, httpMethod: RestManager.HttpMethod, completion: @escaping (_ credentals: Credentials?, _ result: T?) -> Void) {
-        self.restManager.makeRequest(toURL: url, withHttpMethod: .post) { (results) in
+        self.restManager.makeRequest(toURL: url, withHttpMethod: httpMethod) { (results) in
             guard let response = results.response else { completion(nil, nil); return }
             if response.httpStatusCode == 200 {
                 guard let data = results.data else { completion(nil, nil); return }
@@ -75,9 +85,9 @@ class QwertyAPI {
         self.handleResults(url: url, httpMethod: RestManager.HttpMethod.post, completion: completion)
     }
     
-    public func getQRCodes(completion: @escaping (_ credentals: Credentials?, _ qrCodeData: QRCodeData? ) -> Void) {
+    public func getQRCodes(completion: @escaping (_ credentals: Credentials?, _ qrCodeData: QRCodeData? ) -> Void) throws {
         guard let url = getUrl(path: "/api/qr_codes") else { completion(nil, nil); return }
-        self.addAuthenticatedHeaders()
+        try self.addAuthenticatedHeaders()
         self.handleResults(url: url, httpMethod: RestManager.HttpMethod.get, completion: completion)
     }
 }

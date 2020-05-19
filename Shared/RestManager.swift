@@ -64,7 +64,8 @@ class RestManager {
                      completion: @escaping (_ result: Results) -> Void) {
 
         let targetURL = self.addURLQueryParameters(toURL: url)
-        let httpBody = self.getHttpBody()
+        let httpBody = httpMethod == .get ? nil : self.getHttpBody()
+        
         guard let request = self.prepareRequest(withURL: targetURL, httpBody: httpBody, httpMethod: httpMethod) else {
             completion(Results(withError: CustomError.failedToCreateRequest))
             return

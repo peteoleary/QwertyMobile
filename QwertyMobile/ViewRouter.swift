@@ -13,6 +13,14 @@ import SwiftUI
 class ViewRouter: ObservableObject {
     let objectWillChange = PassthroughSubject<ViewRouter,Never>()
     
+    var alertMessage:String?
+    var alertTitle: String?
+    var showAlert: Bool = false {
+        didSet {
+            objectWillChange.send(self)
+        }
+    }
+    
     var currentPage: String = "login" {
         didSet {
             objectWillChange.send(self)
