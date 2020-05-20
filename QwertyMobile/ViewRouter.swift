@@ -13,6 +13,16 @@ import SwiftUI
 class ViewRouter: ObservableObject {
     let objectWillChange = PassthroughSubject<ViewRouter,Never>()
     
+    var credentials: Credentials?
+    
+    func setCredentials (credentials: Credentials?) {
+        
+        // don't overwrite the token with any empty value, this happens when the token has not changed since the last call
+        if credentials == nil || self.credentials == nil || !credentials!.token.isEmpty {
+            self.credentials = credentials
+        }
+    }
+    
     var alertMessage:String?
     var alertTitle: String?
     var showAlert: Bool = false {
@@ -22,11 +32,6 @@ class ViewRouter: ObservableObject {
     }
     
     var currentPage: String = "login" {
-        didSet {
-            objectWillChange.send(self)
-        }
-    }
-    var credentials: Credentials? {
         didSet {
             objectWillChange.send(self)
         }

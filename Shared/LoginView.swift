@@ -38,7 +38,7 @@ struct LoginView : View {
                 api.login(email: self.email, password: self.password) { (credentials: Credentials?, loggedInUser: UserData?) in
                     DispatchQueue.main.async {
                         if credentials != nil {
-                                self.viewRouter.credentials = credentials
+                                self.viewRouter.setCredentials(credentials: credentials)
                                 self.viewRouter.currentPage = "qrcode"
                                 }
                         else {

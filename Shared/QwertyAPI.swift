@@ -36,8 +36,11 @@ class QwertyAPI {
         if self.credentials == nil {
             throw QwertyAPIError.credentialsRequired
         }
-        
         self.addAnonymousHeaders()
+        
+        self.restManager.requestHttpHeaders.add(value: self.credentials!.uid, forKey: "uid")
+        self.restManager.requestHttpHeaders.add(value: self.credentials!.client_id, forKey: "client")
+        self.restManager.requestHttpHeaders.add(value: self.credentials!.token, forKey: "access-token")
     }
     
     private func handleResults<T:Codable>(url: URL, httpMethod: RestManager.HttpMethod, completion: @escaping (_ credentals: Credentials?, _ result: T?) -> Void) {
@@ -54,6 +57,7 @@ class QwertyAPI {
                     
                     completion(creds, userData)
                     
+                // TODO: if there is a decoding error, the new credentials are not sent back to the caller and therefore we will lose them
                 } catch let DecodingError.dataCorrupted(context) {
                     print(context)
                 } catch let DecodingError.keyNotFound(key, context) {
@@ -85,7 +89,7 @@ class QwertyAPI {
         self.handleResults(url: url, httpMethod: RestManager.HttpMethod.post, completion: completion)
     }
     
-    public func getQRCodes(completion: @escaping (_ credentals: Credentials?, _ qrCodeData: QRCodeData? ) -> Void) throws {
+    public func getQRCodes(completion: @escaping (_ credentals: Credentials?, _ qrCodeData: [QRCode]? ) -> Void) throws {
         guard let url = getUrl(path: "/api/qr_codes") else { completion(nil, nil); return }
         try self.addAuthenticatedHeaders()
         self.handleResults(url: url, httpMethod: RestManager.HttpMethod.get, completion: completion)

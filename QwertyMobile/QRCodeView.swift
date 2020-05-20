@@ -38,7 +38,8 @@ struct QRCodeView : View {
 #if DEBUG
 struct QRCodeView_Previews : PreviewProvider {
     static var previews: some View {
-        QRCodeView(viewRouter: ViewRouter(), qrcode_store: QRCodeStore(credentials: nil))
+        let vr = ViewRouter()
+        return QRCodeView(viewRouter: vr, qrcode_store: QRCodeStore(viewRouter: vr))
     }
 }
 #endif

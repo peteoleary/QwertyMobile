@@ -12,16 +12,20 @@ import Combine
 class QRCodeStore: ObservableObject {
     @Published private(set) var qrcodes: [QRCode] = []
     
-    var api:QwertyAPI
-    init(credentials: Credentials?) {
-        self.api = QwertyAPI(credentials: credentials)
+    var viewRouter: ViewRouter
+    
+    init(viewRouter: ViewRouter) {
+        self.viewRouter = viewRouter
     }
 
     func fetch() throws {
-        try api.getQRCodes() { (credentials: Credentials?, qrCodeData: QRCodeData?) in
+        // recreate the QwertyAPI object each time as the viewRouter credentials may have changed
+        let api = QwertyAPI(credentials: viewRouter.credentials)
+        try api.getQRCodes() { (credentials: Credentials?, qrCodeData: [QRCode]?) in
             DispatchQueue.main.async {
                 if qrCodeData != nil {
-                    self.qrcodes = qrCodeData!.data
+                    self.qrcodes = qrCodeData!
+                    self.viewRouter.setCredentials(credentials: credentials)
                 }
             }
         }

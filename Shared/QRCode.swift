@@ -21,9 +21,3 @@ struct QRCode: Codable, Hashable {
     var description:String
     var qr_code_svg:String?
 }
-
-struct QRCodeData: Codable, Hashable {
-    var data: [
-        QRCode
-    ]
-}
