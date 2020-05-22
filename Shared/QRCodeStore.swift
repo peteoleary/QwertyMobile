@@ -11,7 +11,6 @@ import Combine
 
 class QRCodeStore: ObservableObject {
     @Published private(set) var qrcodes: [QRCode] = []
-    
     var viewRouter: ViewRouter
     
     init(viewRouter: ViewRouter) {

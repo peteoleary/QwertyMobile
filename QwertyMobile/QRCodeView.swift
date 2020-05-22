@@ -12,13 +12,18 @@ import SwiftUI
 struct QRCodeView : View {
     
     @ObservedObject var viewRouter: ViewRouter
-    @State var qrcode_store: QRCodeStore
+    @EnvironmentObject var qrcode_store: QRCodeStore
+    
+    init(viewRouter: ViewRouter) {
+        self.viewRouter = viewRouter
+    }
+
         
     var body: some View {
         NavigationView {
             List {
                 Button("Refresh...", action: fetch)
-                ForEach(qrcode_store.qrcodes, id: \.self) { qr in
+                ForEach(self.qrcode_store.qrcodes, id: \.self) { qr in
                     QRCodeViewRow(qrcode: qr)
                 }
             }.navigationBarTitle(Text("QR Codes"))
@@ -39,7 +44,7 @@ struct QRCodeView : View {
 struct QRCodeView_Previews : PreviewProvider {
     static var previews: some View {
         let vr = ViewRouter()
-        return QRCodeView(viewRouter: vr, qrcode_store: QRCodeStore(viewRouter: vr))
+        return QRCodeView(viewRouter: vr)
     }
 }
 #endif

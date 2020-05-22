@@ -22,7 +22,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
-            window.rootViewController = UIHostingController(rootView: MainView(viewRouter: ViewRouter()))
+            let vr = ViewRouter()
+            let qrcode_store = QRCodeStore(viewRouter: vr)
+            window.rootViewController = UIHostingController(rootView: MainView(viewRouter: vr).environmentObject(qrcode_store))
             self.window = window
             window.makeKeyAndVisible()
         }
