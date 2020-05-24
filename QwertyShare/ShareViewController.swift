@@ -7,26 +7,31 @@
 //
 
 import UIKit
+import SwiftUI
 import Social
 import os.log
 
 class QwertyShareViewController: UIViewController {
-    private lazy var textField: UITextField = {
-        let textField = UITextField()
-        textField.text = "some value"
-        textField.backgroundColor = .white
-        textField.translatesAutoresizingMaskIntoConstraints = false
-
-        return textField
-    }()
+    
 
     private func setupViews() {
-        self.view.addSubview(textField)
+        
+        // view.translatesAutoresizingMaskIntoConstraints = false
+        
+        let vr = ViewRouter()
+        let qrcode_store = QRCodeStore(viewRouter: vr)
+        let hostingController = UIHostingController(rootView: MainView(viewRouter: vr).environmentObject(qrcode_store))
+        
+        addChild(hostingController)
+        view.addSubview(hostingController.view)
+        
+        hostingController.view.translatesAutoresizingMaskIntoConstraints = false
+        
         NSLayoutConstraint.activate([
-            textField.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
-            textField.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
-            textField.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
-            textField.heightAnchor.constraint(equalToConstant: 44)
+            hostingController.view.topAnchor.constraint(equalTo: view.topAnchor, constant: 0),
+            hostingController.view.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0),
+            hostingController.view.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 0),
+            hostingController.view.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0),
         ])
     }
 
@@ -42,7 +47,7 @@ class QwertyShareViewController: UIViewController {
 
     // 2: Set the title and the navigation items
     private func setupNavBar() {
-        self.navigationItem.title = "Qwerty Share"
+        self.navigationItem.title = "Qwerty Share v0.06"
 
         let itemCancel = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancelAction))
         self.navigationItem.setLeftBarButton(itemCancel, animated: false)
