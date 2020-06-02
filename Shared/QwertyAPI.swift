@@ -94,4 +94,11 @@ class QwertyAPI {
         try self.addAuthenticatedHeaders()
         self.handleResults(url: url, httpMethod: RestManager.HttpMethod.get, completion: completion)
     }
+    
+    public func getItems(completion: @escaping (_ credentals: Credentials?, _ itemData: [Item]? ) -> Void) throws {
+        guard let url = getUrl(path: "/api/items") else { completion(nil, nil); return }
+        try self.addAuthenticatedHeaders()
+        self.handleResults(url: url, httpMethod: RestManager.HttpMethod.get, completion: completion)
+    }
+
 }

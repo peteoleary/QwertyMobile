@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -38,6 +38,14 @@
 		2CDABA0A24709D0700F7E803 /* QwertyAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDABA0824709D0700F7E803 /* QwertyAPI.swift */; };
 		2CDABA142472DB2400F7E803 /* QRCodeViewRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDABA132472DB2400F7E803 /* QRCodeViewRow.swift */; };
 		2CDABA152472DB2400F7E803 /* QRCodeViewRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDABA132472DB2400F7E803 /* QRCodeViewRow.swift */; };
+		2CF42F1224856F1F00C558BC /* ItemViewRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF42F1124856F1F00C558BC /* ItemViewRow.swift */; };
+		2CF42F1324856F1F00C558BC /* ItemViewRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF42F1124856F1F00C558BC /* ItemViewRow.swift */; };
+		2CF42F1524856F3600C558BC /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF42F1424856F3600C558BC /* ItemView.swift */; };
+		2CF42F1624856F3600C558BC /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF42F1424856F3600C558BC /* ItemView.swift */; };
+		2CF42F1824856F9C00C558BC /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF42F1724856F9C00C558BC /* Item.swift */; };
+		2CF42F1924856F9C00C558BC /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF42F1724856F9C00C558BC /* Item.swift */; };
+		2CF42F1C2485CC1B00C558BC /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = 2CF42F1B2485CC1B00C558BC /* URLImage */; };
+		2CF42F1F2485CF9F00C558BC /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = 2CF42F1E2485CF9F00C558BC /* URLImage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +107,9 @@
 		2CDABA05247090D400F7E803 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		2CDABA0824709D0700F7E803 /* QwertyAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QwertyAPI.swift; sourceTree = "<group>"; };
 		2CDABA132472DB2400F7E803 /* QRCodeViewRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeViewRow.swift; sourceTree = "<group>"; };
+		2CF42F1124856F1F00C558BC /* ItemViewRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemViewRow.swift; sourceTree = "<group>"; };
+		2CF42F1424856F3600C558BC /* ItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemView.swift; sourceTree = "<group>"; };
+		2CF42F1724856F9C00C558BC /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +117,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CF42F1C2485CC1B00C558BC /* URLImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -127,6 +139,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CF42F1F2485CF9F00C558BC /* URLImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,6 +155,7 @@
 				2CDAB9CD246EF6E800F7E803 /* QwertyMobileUITests */,
 				2CDAB9E1246EF70100F7E803 /* QwertyShare */,
 				2CDAB9AA246EF6E700F7E803 /* Products */,
+				2CF42F1D2485CF9F00C558BC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -161,6 +175,7 @@
 			children = (
 				2CDAB9FF2470636700F7E803 /* ViewRouter.swift */,
 				2CDAB9FC247058AD00F7E803 /* QRCodeView.swift */,
+				2CF42F1424856F3600C558BC /* ItemView.swift */,
 				2CDAB9F92470573400F7E803 /* MainView.swift */,
 				2CDAB9AC246EF6E700F7E803 /* AppDelegate.swift */,
 				2CDAB9AE246EF6E700F7E803 /* SceneDelegate.swift */,
@@ -213,13 +228,22 @@
 			children = (
 				2CDAB9F224702DF600F7E803 /* QRCode.swift */,
 				2CDABA0824709D0700F7E803 /* QwertyAPI.swift */,
+				2CF42F1724856F9C00C558BC /* Item.swift */,
 				2CDABA0224706BA300F7E803 /* LoginView.swift */,
 				2CDAB9EF246F0DC300F7E803 /* RestManager.swift */,
+				2CF42F1124856F1F00C558BC /* ItemViewRow.swift */,
 				2CDABA132472DB2400F7E803 /* QRCodeViewRow.swift */,
 				2CDABA05247090D400F7E803 /* User.swift */,
 				2C83298824731E2F004B9CBD /* QRCodeStore.swift */,
 			);
 			path = Shared;
+			sourceTree = "<group>";
+		};
+		2CF42F1D2485CF9F00C558BC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -239,6 +263,9 @@
 			dependencies = (
 			);
 			name = QwertyMobile;
+			packageProductDependencies = (
+				2CF42F1B2485CC1B00C558BC /* URLImage */,
+			);
 			productName = QwertyMobile;
 			productReference = 2CDAB9A9246EF6E700F7E803 /* QwertyMobile.app */;
 			productType = "com.apple.product-type.application";
@@ -292,6 +319,9 @@
 			dependencies = (
 			);
 			name = QwertyShare;
+			packageProductDependencies = (
+				2CF42F1E2485CF9F00C558BC /* URLImage */,
+			);
 			productName = QwertyShare;
 			productReference = 2CDAB9E0246EF70100F7E803 /* QwertyShare.appex */;
 			productType = "com.apple.product-type.app-extension";
@@ -331,6 +361,9 @@
 				Base,
 			);
 			mainGroup = 2CDAB9A0246EF6E700F7E803;
+			packageReferences = (
+				2CF42F1A2485CC1A00C558BC /* XCRemoteSwiftPackageReference "url-image" */,
+			);
 			productRefGroup = 2CDAB9AA246EF6E700F7E803 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -392,8 +425,11 @@
 				2CDAB9FD247058AD00F7E803 /* QRCodeView.swift in Sources */,
 				2CDAB9AF246EF6E700F7E803 /* SceneDelegate.swift in Sources */,
 				2CDABA06247090D400F7E803 /* User.swift in Sources */,
+				2CF42F1224856F1F00C558BC /* ItemViewRow.swift in Sources */,
 				2CDAB9F324702DF600F7E803 /* QRCode.swift in Sources */,
+				2CF42F1824856F9C00C558BC /* Item.swift in Sources */,
 				2CDABA0324706BA300F7E803 /* LoginView.swift in Sources */,
+				2CF42F1524856F3600C558BC /* ItemView.swift in Sources */,
 				2CDABA002470636700F7E803 /* ViewRouter.swift in Sources */,
 				2C83298924731E2F004B9CBD /* QRCodeStore.swift in Sources */,
 			);
@@ -423,12 +459,15 @@
 				2CDABA0424706BA300F7E803 /* LoginView.swift in Sources */,
 				2CDAB9FB2470573400F7E803 /* MainView.swift in Sources */,
 				2CDAB9FE247058AD00F7E803 /* QRCodeView.swift in Sources */,
+				2CF42F1924856F9C00C558BC /* Item.swift in Sources */,
 				2C83298A24731E2F004B9CBD /* QRCodeStore.swift in Sources */,
 				2CDABA0A24709D0700F7E803 /* QwertyAPI.swift in Sources */,
 				2CDABA152472DB2400F7E803 /* QRCodeViewRow.swift in Sources */,
 				2CDABA07247090D400F7E803 /* User.swift in Sources */,
 				2CDABA012470636700F7E803 /* ViewRouter.swift in Sources */,
+				2CF42F1624856F3600C558BC /* ItemView.swift in Sources */,
 				2CDAB9F1246F0DC300F7E803 /* RestManager.swift in Sources */,
+				2CF42F1324856F1F00C558BC /* ItemViewRow.swift in Sources */,
 				2CDAB9F424702DF600F7E803 /* QRCode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -787,6 +826,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2CF42F1A2485CC1A00C558BC /* XCRemoteSwiftPackageReference "url-image" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dmytro-anokhin/url-image.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.15;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2CF42F1B2485CC1B00C558BC /* URLImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2CF42F1A2485CC1A00C558BC /* XCRemoteSwiftPackageReference "url-image" */;
+			productName = URLImage;
+		};
+		2CF42F1E2485CF9F00C558BC /* URLImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2CF42F1A2485CC1A00C558BC /* XCRemoteSwiftPackageReference "url-image" */;
+			productName = URLImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2CDAB9A1246EF6E700F7E803 /* Project object */;
 }

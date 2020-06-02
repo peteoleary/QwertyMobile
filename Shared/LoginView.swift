@@ -39,7 +39,7 @@ struct LoginView : View {
                     DispatchQueue.main.async {
                         if credentials != nil {
                                 self.viewRouter.setCredentials(credentials: credentials)
-                                self.viewRouter.currentPage = "qrcode"
+                                self.viewRouter.currentPage = "items"
                                 }
                         else {
                                 self.authenticationDidFail = true

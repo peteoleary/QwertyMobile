@@ -9,7 +9,7 @@
 import Foundation
 import SwiftUI
 
-struct QRCodeView : View {
+struct ItemView : View {
     
     @ObservedObject var viewRouter: ViewRouter
     @EnvironmentObject var qrcode_store: QRCodeStore
@@ -23,25 +23,25 @@ struct QRCodeView : View {
         NavigationView {
             List {
                 Button("Refresh...", action: fetch)
-                ForEach(self.qrcode_store.qrcodes, id: \.self) { qr in
-                    QRCodeViewRow(qrcode: qr)
+                ForEach(self.qrcode_store.items, id: \.self) { item in
+                    ItemViewRow(item: item)
                 }
-            }.navigationBarTitle(Text("QR Codes"))
+            }.navigationBarTitle(Text("Items"))
         }.onAppear(perform: fetch)
     }
 
     private func fetch() {
         do {
-            try qrcode_store.fetch_qrcodes()
+            try qrcode_store.fetch_items()
         } catch {
             viewRouter.alertTitle = "Error"
-            viewRouter.alertMessage = "Could not load the QR Code list \(error)"
+            viewRouter.alertMessage = "Could not load the Items list \(error)"
             viewRouter.showAlert = true
         }
     }}
 
 #if DEBUG
-struct QRCodeView_Previews : PreviewProvider {
+struct ItemView_Previews : PreviewProvider {
     static var previews: some View {
         let vr = ViewRouter()
         return QRCodeView(viewRouter: vr)

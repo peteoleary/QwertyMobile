@@ -21,6 +21,8 @@ struct MainView : View {
                     LoginView(viewRouter: viewRouter)
                 } else if viewRouter.currentPage == "qrcode" {
                     QRCodeView(viewRouter: viewRouter)
+                } else if viewRouter.currentPage == "items" {
+                    ItemView(viewRouter: viewRouter)
                 }
             }.alert(isPresented: $viewRouter.showAlert) {
                 Alert(title: Text(viewRouter.alertTitle!), message: Text(viewRouter.alertMessage!), dismissButton: .default(Text("Got it!")))
