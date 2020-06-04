@@ -24,7 +24,8 @@ class QwertyAPI {
     }
     
     private func getUrl(path: String) -> URL?{
-        return URL(string: "http://localhost:3001\(path)")
+        let server_url = UserDefaults.standard.string(forKey: "server_url") ?? "http://localhost:3001"
+        return URL(string: "\(server_url)\(path)")
     }
     
     private func addAnonymousHeaders() {

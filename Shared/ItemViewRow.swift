@@ -15,14 +15,14 @@ struct ItemViewRow: View {
     var body: some View {
         VStack(alignment: .leading) {
             Text(item.title).font(.title)
-            // TODO: add item image
-            HStack {
-                Text(item.description ?? "").font(.subheadline)
-                Spacer()
+            if (item.qr_code != nil) {
+                Text(item.qr_code!.url)
             }
+            // TODO: add item image
+            Text(item.description ?? "").font(.subheadline)
             URLImage(URL(string: item.image_url)!)
-            .scaledToFit()
-            .frame(width: 200.0,height:200)
+                .scaledToFit()
+                .frame(width: 200.0,height:200)
         }
     }
 }

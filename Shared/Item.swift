@@ -18,4 +18,6 @@ struct Item: Codable, Hashable {
     var image_url:String
     var title:String
     var description:String?
+    
+    var qr_code: QRCode?
 }

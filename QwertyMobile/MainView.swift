@@ -12,13 +12,12 @@ import Combine
 struct MainView : View {
     
     @ObservedObject var viewRouter: ViewRouter
+    @EnvironmentObject var qrcodeStore: QRCodeStore
     
     var body: some View {
             VStack {
-                // TODO: check if credentials are valid
-                
-                if viewRouter.currentPage == "login" {
-                    LoginView(viewRouter: viewRouter)
+                if !qrcodeStore.loggedIn() {
+                     LoginView(viewRouter: viewRouter)
                 } else if viewRouter.currentPage == "qrcode" {
                     QRCodeView(viewRouter: viewRouter)
                 } else if viewRouter.currentPage == "items" {

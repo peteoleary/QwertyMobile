@@ -46,6 +46,8 @@
 		2CF42F1924856F9C00C558BC /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF42F1724856F9C00C558BC /* Item.swift */; };
 		2CF42F1C2485CC1B00C558BC /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = 2CF42F1B2485CC1B00C558BC /* URLImage */; };
 		2CF42F1F2485CF9F00C558BC /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = 2CF42F1E2485CF9F00C558BC /* URLImage */; };
+		2CF42F21248818F600C558BC /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2CF42F20248818F600C558BC /* Settings.bundle */; };
+		2CF42F22248818F600C558BC /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2CF42F20248818F600C558BC /* Settings.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +112,9 @@
 		2CF42F1124856F1F00C558BC /* ItemViewRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemViewRow.swift; sourceTree = "<group>"; };
 		2CF42F1424856F3600C558BC /* ItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemView.swift; sourceTree = "<group>"; };
 		2CF42F1724856F9C00C558BC /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		2CF42F20248818F600C558BC /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		2CF42F2724885DE400C558BC /* QwertyMobile.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = QwertyMobile.entitlements; sourceTree = "<group>"; };
+		2CF42F282488637D00C558BC /* QwertyShare.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = QwertyShare.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +154,7 @@
 		2CDAB9A0246EF6E700F7E803 = {
 			isa = PBXGroup;
 			children = (
+				2CF42F20248818F600C558BC /* Settings.bundle */,
 				2CDAB9F524702E2A00F7E803 /* Shared */,
 				2CDAB9AB246EF6E700F7E803 /* QwertyMobile */,
 				2CDAB9C2246EF6E800F7E803 /* QwertyMobileTests */,
@@ -173,6 +179,7 @@
 		2CDAB9AB246EF6E700F7E803 /* QwertyMobile */ = {
 			isa = PBXGroup;
 			children = (
+				2CF42F2724885DE400C558BC /* QwertyMobile.entitlements */,
 				2CDAB9FF2470636700F7E803 /* ViewRouter.swift */,
 				2CDAB9FC247058AD00F7E803 /* QRCodeView.swift */,
 				2CF42F1424856F3600C558BC /* ItemView.swift */,
@@ -217,6 +224,7 @@
 		2CDAB9E1246EF70100F7E803 /* QwertyShare */ = {
 			isa = PBXGroup;
 			children = (
+				2CF42F282488637D00C558BC /* QwertyShare.entitlements */,
 				2CDAB9E2246EF70100F7E803 /* ShareViewController.swift */,
 				2CDAB9E7246EF70100F7E803 /* Info.plist */,
 			);
@@ -383,6 +391,7 @@
 			files = (
 				2CDAB9B9246EF6E800F7E803 /* LaunchScreen.storyboard in Resources */,
 				2CDAB9F72470351100F7E803 /* Pepper Instagram.jpg in Resources */,
+				2CF42F21248818F600C558BC /* Settings.bundle in Resources */,
 				2CDAB9B6246EF6E800F7E803 /* Preview Assets.xcassets in Resources */,
 				2CDAB9B3246EF6E800F7E803 /* Assets.xcassets in Resources */,
 			);
@@ -406,6 +415,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CF42F22248818F600C558BC /* Settings.bundle in Resources */,
 				2CDAB9F82470351100F7E803 /* Pepper Instagram.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -618,6 +628,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = QwertyMobile/QwertyMobile.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"QwertyMobile/Preview Content\"";
 				DEVELOPMENT_TEAM = CLE684Z9F2;
@@ -639,6 +650,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = QwertyMobile/QwertyMobile.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"QwertyMobile/Preview Content\"";
 				DEVELOPMENT_TEAM = CLE684Z9F2;
@@ -742,6 +754,7 @@
 		2CDAB9EC246EF70100F7E803 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = QwertyShare/QwertyShare.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CLE684Z9F2;
 				INFOPLIST_FILE = QwertyShare/Info.plist;
@@ -761,6 +774,7 @@
 		2CDAB9ED246EF70100F7E803 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = QwertyShare/QwertyShare.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CLE684Z9F2;
 				INFOPLIST_FILE = QwertyShare/Info.plist;

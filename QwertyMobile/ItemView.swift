@@ -12,7 +12,7 @@ import SwiftUI
 struct ItemView : View {
     
     @ObservedObject var viewRouter: ViewRouter
-    @EnvironmentObject var qrcode_store: QRCodeStore
+    @EnvironmentObject var qrcodeStore: QRCodeStore
     
     init(viewRouter: ViewRouter) {
         self.viewRouter = viewRouter
@@ -23,8 +23,9 @@ struct ItemView : View {
         NavigationView {
             List {
                 Button("Refresh...", action: fetch)
-                ForEach(self.qrcode_store.items, id: \.self) { item in
-                    ItemViewRow(item: item)
+                ForEach(self.qrcodeStore.items, id: \.self) { item in
+                    ItemViewRow(item: item).onTapGesture {
+                        /* actions here */ }
                 }
             }.navigationBarTitle(Text("Items"))
         }.onAppear(perform: fetch)
@@ -32,7 +33,7 @@ struct ItemView : View {
 
     private func fetch() {
         do {
-            try qrcode_store.fetch_items()
+            try qrcodeStore.fetch_items()
         } catch {
             viewRouter.alertTitle = "Error"
             viewRouter.alertMessage = "Could not load the Items list \(error)"

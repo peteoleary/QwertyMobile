@@ -13,6 +13,7 @@ let lightGreyColor = Color(red: 239.0/255.0, green: 243.0/255.0, blue: 244.0/255
 struct LoginView : View {
     
     @ObservedObject var viewRouter: ViewRouter
+    @EnvironmentObject var qrcodeStore: QRCodeStore
     
     @State var email: String = ""
     @State var password: String = ""
@@ -38,7 +39,7 @@ struct LoginView : View {
                 api.login(email: self.email, password: self.password) { (credentials: Credentials?, loggedInUser: UserData?) in
                     DispatchQueue.main.async {
                         if credentials != nil {
-                                self.viewRouter.setCredentials(credentials: credentials)
+                            self.qrcodeStore.setCredentials(credentials: credentials)
                                 self.viewRouter.currentPage = "items"
                                 }
                         else {

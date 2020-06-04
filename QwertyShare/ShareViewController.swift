@@ -10,17 +10,17 @@ import UIKit
 import SwiftUI
 import Social
 import os.log
+import MobileCoreServices
 
 class QwertyShareViewController: UIViewController {
     
-
     private func setupViews() {
         
         // view.translatesAutoresizingMaskIntoConstraints = false
         
         let vr = ViewRouter()
-        let qrcode_store = QRCodeStore(viewRouter: vr)
-        let hostingController = UIHostingController(rootView: MainView(viewRouter: vr).environmentObject(qrcode_store))
+        let qrcodeStore = QRCodeStore(credentials: nil)
+        let hostingController = UIHostingController(rootView: MainView(viewRouter: vr).environmentObject(qrcodeStore))
         
         addChild(hostingController)
         view.addSubview(hostingController.view)
@@ -34,9 +34,32 @@ class QwertyShareViewController: UIViewController {
             hostingController.view.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0),
         ])
     }
+    
+    private func fetchAndSetContentFromContext() {
+
+        guard let extensionItems = extensionContext?.inputItems as? [NSExtensionItem] else {
+            return
+        }
+
+        for extensionItem in extensionItems {
+            if let itemProviders = extensionItem.attachments {
+                for itemProvider in itemProviders {
+                    if itemProvider.hasItemConformingToTypeIdentifier(kUTTypeText as String) {
+
+                        itemProvider.loadItem(forTypeIdentifier: kUTTypeText as String, options: nil, completionHandler: { text, error in
+
+                        })
+                    }
+                }
+            }
+        }
+    }
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        fetchAndSetContentFromContext()
 
         // 1: Set the background and call the function to create the navigation bar
         self.view.backgroundColor = .systemGray6
@@ -47,7 +70,7 @@ class QwertyShareViewController: UIViewController {
 
     // 2: Set the title and the navigation items
     private func setupNavBar() {
-        self.navigationItem.title = "Qwerty Share v0.06"
+        self.navigationItem.title = "Qwerty Share v0.10"
 
         let itemCancel = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancelAction))
         self.navigationItem.setLeftBarButton(itemCancel, animated: false)

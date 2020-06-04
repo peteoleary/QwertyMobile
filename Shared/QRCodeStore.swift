@@ -12,20 +12,50 @@ import Combine
 class QRCodeStore: ObservableObject {
     @Published private(set) var qrcodes: [QRCode] = []
     @Published private(set) var items: [Item] = []
-    var viewRouter: ViewRouter
+    var credentials: Credentials?
     
-    init(viewRouter: ViewRouter) {
-        self.viewRouter = viewRouter
+    let suiteName = "group.com.UnitedTomatoCans.QwertyMobile"
+    var userDefaults: UserDefaults
+    
+    init(credentials: Credentials?) {
+        self.userDefaults = UserDefaults(suiteName: suiteName)!
+        
+        if (credentials == nil) {
+            if let data = self.userDefaults.object(forKey: "credentials") as? Data {
+                self.credentials = try? JSONDecoder().decode(Credentials.self, from: data)
+            }
+        }
+        else {
+            self.credentials = credentials
+        }
+    }
+    
+    func setCredentials (credentials: Credentials?) {
+        
+        // don't overwrite the token with any empty value, this happens when the token has not changed since the last call
+        if credentials == nil || self.credentials == nil || !credentials!.token.isEmpty {
+            self.credentials = credentials
+            
+            if let encoded = try? JSONEncoder().encode(credentials) {
+                self.userDefaults.set(encoded, forKey: "credentials")
+                self.userDefaults.synchronize()
+            }
+            
+        }
+    }
+    
+    func loggedIn() -> Bool {
+        return credentials != nil
     }
 
     func fetch_qrcodes() throws {
         // recreate the QwertyAPI object each time as the viewRouter credentials may have changed
-        let api = QwertyAPI(credentials: viewRouter.credentials)
+        let api = QwertyAPI(credentials: self.credentials)
         try api.getQRCodes() { (credentials: Credentials?, qrCodeData: [QRCode]?) in
             DispatchQueue.main.async {
                 if qrCodeData != nil {
                     self.qrcodes = qrCodeData!
-                    self.viewRouter.setCredentials(credentials: credentials)
+                    self.setCredentials(credentials: credentials)
                 }
             }
         }
@@ -33,12 +63,12 @@ class QRCodeStore: ObservableObject {
     
     func fetch_items() throws {
         // recreate the QwertyAPI object each time as the viewRouter credentials may have changed
-        let api = QwertyAPI(credentials: viewRouter.credentials)
+        let api = QwertyAPI(credentials: self.credentials)
         try api.getItems() { (credentials: Credentials?, itemData: [Item]?) in
             DispatchQueue.main.async {
                 if itemData != nil {
                     self.items = itemData!
-                    self.viewRouter.setCredentials(credentials: credentials)
+                    self.setCredentials(credentials: credentials)
                 }
             }
         }

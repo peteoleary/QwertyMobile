@@ -26,7 +26,7 @@ struct User: Codable {
     var allow_password_change:Bool
 }
 
-struct Credentials {
+struct Credentials: Codable {
     var uid: String
     var client_id: String
     var token: String
