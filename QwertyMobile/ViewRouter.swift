@@ -22,6 +22,12 @@ class ViewRouter: ObservableObject {
         }
     }
     
+    var shareURL: URL? = nil {
+        didSet {
+            objectWillChange.send(self)
+        }
+    }
+    
     var currentPage: String = "items" {
         didSet {
             objectWillChange.send(self)

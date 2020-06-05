@@ -23,9 +23,14 @@ struct ItemView : View {
         NavigationView {
             List {
                 Button("Refresh...", action: fetch)
+                if (self.viewRouter.shareURL != nil) {
+                    Text(self.viewRouter.shareURL!.absoluteString)
+                }
                 ForEach(self.qrcodeStore.items, id: \.self) { item in
                     ItemViewRow(item: item).onTapGesture {
-                        /* actions here */ }
+                        /* actions here */
+                        print(item)
+                    }
                 }
             }.navigationBarTitle(Text("Items"))
         }.onAppear(perform: fetch)

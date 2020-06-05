@@ -24,7 +24,7 @@ class QwertyAPI {
     }
     
     private func getUrl(path: String) -> URL?{
-        let server_url = UserDefaults.standard.string(forKey: "server_url") ?? "http://localhost:3001"
+        let server_url = "https://879383e4cb94.ngrok.io"
         return URL(string: "\(server_url)\(path)")
     }
     

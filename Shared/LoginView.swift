@@ -55,7 +55,7 @@ struct LoginView : View {
             }
             
             
-        }.padding()
+        }.padding().keyboardAware()
     }
 }
 struct LoginView_Previews: PreviewProvider {

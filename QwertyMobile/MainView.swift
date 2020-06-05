@@ -1,9 +1,9 @@
 //
-//  MotherView.swift
+//  MainView.swift
 //  NavigateInSwiftUIComplete
 //
-//  Created by Andreas Schultz on 19.07.19.
-//  Copyright © 2019 Andreas Schultz. All rights reserved.
+//  Created by Peter O'Leary on 5/16/20.
+//  Copyright © 2020 United Tomato Cans, Inc. All rights reserved.
 //
 
 import SwiftUI
@@ -31,7 +31,7 @@ struct MainView : View {
 }
 
 #if DEBUG
-struct MotherView_Previews : PreviewProvider {
+struct MainView_Previews : PreviewProvider {
     static var previews: some View {
         MainView(viewRouter: ViewRouter())
     }

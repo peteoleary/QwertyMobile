@@ -15,12 +15,13 @@ import MobileCoreServices
 class QwertyShareViewController: UIViewController {
     
     private func setupViews() {
+                
+        let viewRouter = ViewRouter()
         
-        // view.translatesAutoresizingMaskIntoConstraints = false
+        fetchAndSetContentFromContext(viewRouter: viewRouter)
         
-        let vr = ViewRouter()
         let qrcodeStore = QRCodeStore(credentials: nil)
-        let hostingController = UIHostingController(rootView: MainView(viewRouter: vr).environmentObject(qrcodeStore))
+        let hostingController = UIHostingController(rootView: MainView(viewRouter: viewRouter).environmentObject(qrcodeStore))
         
         addChild(hostingController)
         view.addSubview(hostingController.view)
@@ -35,7 +36,7 @@ class QwertyShareViewController: UIViewController {
         ])
     }
     
-    private func fetchAndSetContentFromContext() {
+    private func fetchAndSetContentFromContext(viewRouter: ViewRouter) {
 
         guard let extensionItems = extensionContext?.inputItems as? [NSExtensionItem] else {
             return
@@ -44,10 +45,10 @@ class QwertyShareViewController: UIViewController {
         for extensionItem in extensionItems {
             if let itemProviders = extensionItem.attachments {
                 for itemProvider in itemProviders {
-                    if itemProvider.hasItemConformingToTypeIdentifier(kUTTypeText as String) {
+                    if itemProvider.hasItemConformingToTypeIdentifier(kUTTypeURL as String) {
 
-                        itemProvider.loadItem(forTypeIdentifier: kUTTypeText as String, options: nil, completionHandler: { text, error in
-
+                        itemProvider.loadObject(ofClass: NSURL.self, completionHandler: { (url, _error) in
+                            viewRouter.shareURL = URL(string: (url as! NSURL).absoluteString!)
                         })
                     }
                 }
@@ -58,8 +59,6 @@ class QwertyShareViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        fetchAndSetContentFromContext()
 
         // 1: Set the background and call the function to create the navigation bar
         self.view.backgroundColor = .systemGray6
