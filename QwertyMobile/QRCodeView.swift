@@ -32,7 +32,7 @@ struct QRCodeView : View {
 
     private func fetch() {
         do {
-            try qrcodeStore.fetch_qrcodes()
+            try qrcodeStore.fetchQrcodes()
         } catch {
             viewRouter.alertTitle = "Error"
             viewRouter.alertMessage = "Could not load the QR Code list \(error)"

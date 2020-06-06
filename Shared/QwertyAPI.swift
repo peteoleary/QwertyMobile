@@ -13,7 +13,7 @@ enum QwertyAPIError: Error {
 }
 
 
-class QwertyAPI {
+class QwertyAPICall {
     
     var restManager: RestManager
     var credentials: Credentials?
@@ -101,5 +101,24 @@ class QwertyAPI {
         try self.addAuthenticatedHeaders()
         self.handleResults(url: url, httpMethod: RestManager.HttpMethod.get, completion: completion)
     }
-
+    
+    private func addAll(keysAndValues: Any) {
+        for child in Mirror(reflecting: keysAndValues).children {
+            self.restManager.httpBodyParameters.add(value: child.value as! String, forKey: child.label!)
+        }
+    }
+    
+    public func updateItem(item: Item, completion: @escaping (_ credentals: Credentials?, _ itemData: Item? ) -> Void) throws {
+        guard let url = getUrl(path: "/api/items/\(item.id)") else { completion(nil, nil); return }
+        try self.addAuthenticatedHeaders()
+        self.addAll(keysAndValues: item)
+        self.handleResults(url: url, httpMethod: RestManager.HttpMethod.put, completion: completion)
+    }
+    
+    public func updateQrcode(qrcode: QRCode, completion: @escaping (_ credentals: Credentials?, _ qrCodeData: QRCode? ) -> Void) throws {
+        guard let url = getUrl(path: "/api/qrcodes/\(qrcode.id)") else { completion(nil, nil); return }
+        try self.addAuthenticatedHeaders()
+        self.addAll(keysAndValues: qrcode)
+        self.handleResults(url: url, httpMethod: RestManager.HttpMethod.put, completion: completion)
+    }
 }

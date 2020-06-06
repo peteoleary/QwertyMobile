@@ -48,10 +48,9 @@ class QRCodeStore: ObservableObject {
         return credentials != nil
     }
 
-    func fetch_qrcodes() throws {
+    func fetchQrcodes() throws {
         // recreate the QwertyAPI object each time as the viewRouter credentials may have changed
-        let api = QwertyAPI(credentials: self.credentials)
-        try api.getQRCodes() { (credentials: Credentials?, qrCodeData: [QRCode]?) in
+        try QwertyAPICall(credentials: self.credentials).getQRCodes() { (credentials: Credentials?, qrCodeData: [QRCode]?) in
             DispatchQueue.main.async {
                 if qrCodeData != nil {
                     self.qrcodes = qrCodeData!
@@ -61,10 +60,14 @@ class QRCodeStore: ObservableObject {
         }
     }
     
-    func fetch_items() throws {
+    func updateItem(item: Item) {
+        // TODO: update qr_code if it changed
+        // TODO: update item if it changed
+    }
+    
+    func fetchItems() throws {
         // recreate the QwertyAPI object each time as the viewRouter credentials may have changed
-        let api = QwertyAPI(credentials: self.credentials)
-        try api.getItems() { (credentials: Credentials?, itemData: [Item]?) in
+        try QwertyAPICall(credentials: self.credentials).getItems() { (credentials: Credentials?, itemData: [Item]?) in
             DispatchQueue.main.async {
                 if itemData != nil {
                     self.items = itemData!

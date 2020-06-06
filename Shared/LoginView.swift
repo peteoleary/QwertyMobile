@@ -33,10 +33,7 @@ struct LoginView : View {
             }
                         
             Button(action: {
-                
-                let api = QwertyAPI()
-                
-                api.login(email: self.email, password: self.password) { (credentials: Credentials?, loggedInUser: UserData?) in
+                QwertyAPICall().login(email: self.email, password: self.password) { (credentials: Credentials?, loggedInUser: UserData?) in
                     DispatchQueue.main.async {
                         if credentials != nil {
                             self.qrcodeStore.setCredentials(credentials: credentials)

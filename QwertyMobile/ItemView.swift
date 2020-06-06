@@ -38,7 +38,7 @@ struct ItemView : View {
 
     private func fetch() {
         do {
-            try qrcodeStore.fetch_items()
+            try qrcodeStore.fetchItems()
         } catch {
             viewRouter.alertTitle = "Error"
             viewRouter.alertMessage = "Could not load the Items list \(error)"
