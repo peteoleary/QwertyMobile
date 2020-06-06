@@ -50,8 +50,6 @@
 		2CF42F22248818F600C558BC /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2CF42F20248818F600C558BC /* Settings.bundle */; };
 		2CF42F2A248A9C6500C558BC /* KeyboardResponsive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF42F29248A9C6400C558BC /* KeyboardResponsive.swift */; };
 		2CF42F2B248A9C6500C558BC /* KeyboardResponsive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF42F29248A9C6400C558BC /* KeyboardResponsive.swift */; };
-		2CF42F2D248AD23600C558BC /* AppIcon.appiconset in Resources */ = {isa = PBXBuildFile; fileRef = 2CF42F2C248AD23600C558BC /* AppIcon.appiconset */; };
-		2CF42F2E248AD23700C558BC /* AppIcon.appiconset in Resources */ = {isa = PBXBuildFile; fileRef = 2CF42F2C248AD23600C558BC /* AppIcon.appiconset */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,7 +118,6 @@
 		2CF42F2724885DE400C558BC /* QwertyMobile.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = QwertyMobile.entitlements; sourceTree = "<group>"; };
 		2CF42F282488637D00C558BC /* QwertyShare.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = QwertyShare.entitlements; sourceTree = "<group>"; };
 		2CF42F29248A9C6400C558BC /* KeyboardResponsive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardResponsive.swift; sourceTree = "<group>"; };
-		2CF42F2C248AD23600C558BC /* AppIcon.appiconset */ = {isa = PBXFileReference; lastKnownFileType = folder; name = AppIcon.appiconset; path = "../../../../Downloads/Qwerty AppIcons/Assets.xcassets/AppIcon.appiconset"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,7 +190,6 @@
 				2CDAB9AC246EF6E700F7E803 /* AppDelegate.swift */,
 				2CDAB9AE246EF6E700F7E803 /* SceneDelegate.swift */,
 				2CDAB9B2246EF6E800F7E803 /* Assets.xcassets */,
-				2CF42F2C248AD23600C558BC /* AppIcon.appiconset */,
 				2CDAB9F62470351100F7E803 /* Pepper Instagram.jpg */,
 				2CDAB9B7246EF6E800F7E803 /* LaunchScreen.storyboard */,
 				2CDAB9BA246EF6E800F7E803 /* Info.plist */,
@@ -401,7 +397,6 @@
 				2CDAB9F72470351100F7E803 /* Pepper Instagram.jpg in Resources */,
 				2CF42F21248818F600C558BC /* Settings.bundle in Resources */,
 				2CDAB9B6246EF6E800F7E803 /* Preview Assets.xcassets in Resources */,
-				2CF42F2D248AD23600C558BC /* AppIcon.appiconset in Resources */,
 				2CDAB9B3246EF6E800F7E803 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -425,7 +420,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				2CF42F22248818F600C558BC /* Settings.bundle in Resources */,
-				2CF42F2E248AD23700C558BC /* AppIcon.appiconset in Resources */,
 				2CDAB9F82470351100F7E803 /* Pepper Instagram.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
