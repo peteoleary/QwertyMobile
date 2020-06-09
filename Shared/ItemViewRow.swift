@@ -18,7 +18,6 @@ struct ItemViewRow: View {
             if (item.qr_code != nil) {
                 Text(item.qr_code!.url)
             }
-            // TODO: add item image
             Text(item.description ?? "").font(.subheadline)
             URLImage(URL(string: item.image_url)!)
                 .scaledToFit()

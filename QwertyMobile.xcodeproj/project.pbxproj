@@ -50,6 +50,10 @@
 		2CF42F22248818F600C558BC /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2CF42F20248818F600C558BC /* Settings.bundle */; };
 		2CF42F2A248A9C6500C558BC /* KeyboardResponsive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF42F29248A9C6400C558BC /* KeyboardResponsive.swift */; };
 		2CF42F2B248A9C6500C558BC /* KeyboardResponsive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF42F29248A9C6400C558BC /* KeyboardResponsive.swift */; };
+		2CF42F33248D7E4E00C558BC /* EditItemModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF42F32248D7E4E00C558BC /* EditItemModal.swift */; };
+		2CF42F34248D7E4E00C558BC /* EditItemModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF42F32248D7E4E00C558BC /* EditItemModal.swift */; };
+		2CF42F37248EB6AF00C558BC /* BetterSheet in Frameworks */ = {isa = PBXBuildFile; productRef = 2CF42F36248EB6AF00C558BC /* BetterSheet */; };
+		2CF42F39248EB6C100C558BC /* BetterSheet in Frameworks */ = {isa = PBXBuildFile; productRef = 2CF42F38248EB6C100C558BC /* BetterSheet */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -118,6 +122,7 @@
 		2CF42F2724885DE400C558BC /* QwertyMobile.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = QwertyMobile.entitlements; sourceTree = "<group>"; };
 		2CF42F282488637D00C558BC /* QwertyShare.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = QwertyShare.entitlements; sourceTree = "<group>"; };
 		2CF42F29248A9C6400C558BC /* KeyboardResponsive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardResponsive.swift; sourceTree = "<group>"; };
+		2CF42F32248D7E4E00C558BC /* EditItemModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditItemModal.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +130,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CF42F37248EB6AF00C558BC /* BetterSheet in Frameworks */,
 				2CF42F1C2485CC1B00C558BC /* URLImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -147,6 +153,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CF42F39248EB6C100C558BC /* BetterSheet in Frameworks */,
 				2CF42F1F2485CF9F00C558BC /* URLImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -185,6 +192,7 @@
 				2CF42F2724885DE400C558BC /* QwertyMobile.entitlements */,
 				2CDAB9FF2470636700F7E803 /* ViewRouter.swift */,
 				2CDAB9FC247058AD00F7E803 /* QRCodeView.swift */,
+				2CF42F32248D7E4E00C558BC /* EditItemModal.swift */,
 				2CF42F1424856F3600C558BC /* ItemView.swift */,
 				2CDAB9F92470573400F7E803 /* MainView.swift */,
 				2CDAB9AC246EF6E700F7E803 /* AppDelegate.swift */,
@@ -277,6 +285,7 @@
 			name = QwertyMobile;
 			packageProductDependencies = (
 				2CF42F1B2485CC1B00C558BC /* URLImage */,
+				2CF42F36248EB6AF00C558BC /* BetterSheet */,
 			);
 			productName = QwertyMobile;
 			productReference = 2CDAB9A9246EF6E700F7E803 /* QwertyMobile.app */;
@@ -333,6 +342,7 @@
 			name = QwertyShare;
 			packageProductDependencies = (
 				2CF42F1E2485CF9F00C558BC /* URLImage */,
+				2CF42F38248EB6C100C558BC /* BetterSheet */,
 			);
 			productName = QwertyShare;
 			productReference = 2CDAB9E0246EF70100F7E803 /* QwertyShare.appex */;
@@ -375,6 +385,7 @@
 			mainGroup = 2CDAB9A0246EF6E700F7E803;
 			packageReferences = (
 				2CF42F1A2485CC1A00C558BC /* XCRemoteSwiftPackageReference "url-image" */,
+				2CF42F35248EB6AF00C558BC /* XCRemoteSwiftPackageReference "BetterSheet" */,
 			);
 			productRefGroup = 2CDAB9AA246EF6E700F7E803 /* Products */;
 			projectDirPath = "";
@@ -431,6 +442,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CF42F33248D7E4E00C558BC /* EditItemModal.swift in Sources */,
 				2CDAB9AD246EF6E700F7E803 /* AppDelegate.swift in Sources */,
 				2CDABA142472DB2400F7E803 /* QRCodeViewRow.swift in Sources */,
 				2CF42F2A248A9C6500C558BC /* KeyboardResponsive.swift in Sources */,
@@ -470,6 +482,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CF42F34248D7E4E00C558BC /* EditItemModal.swift in Sources */,
 				2CDAB9E3246EF70100F7E803 /* ShareViewController.swift in Sources */,
 				2CDABA0424706BA300F7E803 /* LoginView.swift in Sources */,
 				2CDAB9FB2470573400F7E803 /* MainView.swift in Sources */,
@@ -856,6 +869,14 @@
 				minimumVersion = 0.9.15;
 			};
 		};
+		2CF42F35248EB6AF00C558BC /* XCRemoteSwiftPackageReference "BetterSheet" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/egeniq/BetterSheet";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -868,6 +889,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 2CF42F1A2485CC1A00C558BC /* XCRemoteSwiftPackageReference "url-image" */;
 			productName = URLImage;
+		};
+		2CF42F36248EB6AF00C558BC /* BetterSheet */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2CF42F35248EB6AF00C558BC /* XCRemoteSwiftPackageReference "BetterSheet" */;
+			productName = BetterSheet;
+		};
+		2CF42F38248EB6C100C558BC /* BetterSheet */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2CF42F35248EB6AF00C558BC /* XCRemoteSwiftPackageReference "BetterSheet" */;
+			productName = BetterSheet;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

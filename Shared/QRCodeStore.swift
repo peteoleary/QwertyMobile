@@ -61,8 +61,16 @@ class QRCodeStore: ObservableObject {
     }
     
     func updateItem(item: Item) {
-        // TODO: update qr_code if it changed
         // TODO: update item if it changed
+        self.items = self.items.map({replacement_item in
+            if (item.id == replacement_item.id) {
+                // make REST call to update item if appropriate
+                // make REST call to update qrode if appropriate
+                // change approppriate values in replacement_item
+                return item
+            }
+            return replacement_item
+        })
     }
     
     func fetchItems() throws {

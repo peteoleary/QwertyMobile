@@ -11,6 +11,7 @@ import SwiftUI
 import Social
 import os.log
 import MobileCoreServices
+import BetterSheet
 
 class QwertyShareViewController: UIViewController {
     
@@ -21,7 +22,7 @@ class QwertyShareViewController: UIViewController {
         fetchAndSetContentFromContext(viewRouter: viewRouter)
         
         let qrcodeStore = QRCodeStore(credentials: nil)
-        let hostingController = UIHostingController(rootView: MainView(viewRouter: viewRouter).environmentObject(qrcodeStore))
+        let hostingController = UIHostingController.withBetterSheetSupport(rootView: MainView(viewRouter: viewRouter).environmentObject(qrcodeStore))
         
         addChild(hostingController)
         view.addSubview(hostingController.view)

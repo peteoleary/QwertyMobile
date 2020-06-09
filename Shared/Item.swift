@@ -21,3 +21,5 @@ struct Item: Codable, Hashable {
     
     var qr_code: QRCode?
 }
+
+let emptyItem = Item.init(id: -1, image_url: "", title: "")
