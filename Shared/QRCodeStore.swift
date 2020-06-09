@@ -60,17 +60,29 @@ class QRCodeStore: ObservableObject {
         }
     }
     
-    func updateItem(item: Item) {
-        // TODO: update item if it changed
-        self.items = self.items.map({replacement_item in
-            if (item.id == replacement_item.id) {
-                // make REST call to update item if appropriate
-                // make REST call to update qrode if appropriate
-                // change approppriate values in replacement_item
-                return item
-            }
-            return replacement_item
-        })
+    func updateItem(replacement_item: Item) {
+        
+        do {
+            self.items = try self.items.map({current_item in
+                if (replacement_item.id == current_item.id) {
+                    // TODO: make REST call to update item if appropriate
+                    
+                    // FOR NOW: make REST call to update qrode if appropriate
+                    try QwertyAPICall(credentials: self.credentials).updateQrcode(qrcode: replacement_item.qr_code!) { (credentials: Credentials?, qrcodeData: QRCode?) in
+                        DispatchQueue.main.async {
+                            if qrcodeData != nil {
+                                self.setCredentials(credentials: credentials)
+                            }
+                        }
+                    }
+                    
+                    return replacement_item
+                }
+                return current_item
+            })
+        } catch {
+            // TODO: error message here
+        }
     }
     
     func fetchItems() throws {

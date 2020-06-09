@@ -21,10 +21,6 @@ struct ItemView : View {
     init(viewRouter: ViewRouter) {
         self.viewRouter = viewRouter
     }
-    
-    func doUpdateCurrentItem() {
-        qrcodeStore.updateItem(item: <#T##Item#>)
-    }
 
     var body: some View {
         NavigationView {
@@ -35,12 +31,15 @@ struct ItemView : View {
                 }
                 ForEach(self.qrcodeStore.items, id: \.self) { item in
                     ItemViewRow(item: item).onTapGesture {
-                        self.newUrlString = (self.viewRouter.shareURL != nil ? self.viewRouter.shareURL!.absoluteString : item.qr_code!.url)
-                        self.editableItem = item
-                        self.showModal = true
+                        if (item.qr_code != nil) {
+                            self.newUrlString = (self.viewRouter.shareURL != nil ? self.viewRouter.shareURL!.absoluteString : item.qr_code!.url)
+                            self.editableItem = item
+                            self.showModal = true
+                        }
                     }.betterSheet(isPresented: self.$showModal, onDismiss: {
                         if (self.newUrlString.count > 0) {
-                            self.doUpdateCurrentItem()
+                            self.editableItem.qr_code!.url = self.newUrlString
+                            self.qrcodeStore.updateItem(replacement_item: self.editableItem)
                         }
                     }) {
                         EditItemModal(showModal: self.$showModal, editableItem: self.$editableItem, newUrlString: self.$newUrlString)

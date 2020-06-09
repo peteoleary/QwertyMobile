@@ -104,7 +104,8 @@ class QwertyAPICall {
     
     private func addAll(keysAndValues: Any) {
         for child in Mirror(reflecting: keysAndValues).children {
-            self.restManager.httpBodyParameters.add(value: child.value as! String, forKey: child.label!)
+            let stringValue = "\(child.value)"
+            self.restManager.httpBodyParameters.add(value: stringValue, forKey: child.label!)
         }
     }
     
@@ -116,7 +117,7 @@ class QwertyAPICall {
     }
     
     public func updateQrcode(qrcode: QRCode, completion: @escaping (_ credentals: Credentials?, _ qrCodeData: QRCode? ) -> Void) throws {
-        guard let url = getUrl(path: "/api/qrcodes/\(qrcode.id)") else { completion(nil, nil); return }
+        guard let url = getUrl(path: "/api/qr_codes/\(qrcode.id)") else { completion(nil, nil); return }
         try self.addAuthenticatedHeaders()
         self.addAll(keysAndValues: qrcode)
         self.handleResults(url: url, httpMethod: RestManager.HttpMethod.put, completion: completion)
