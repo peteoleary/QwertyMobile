@@ -52,9 +52,9 @@ class QRCodeStore: ObservableObject {
         // recreate the QwertyAPI object each time as the viewRouter credentials may have changed
         try QwertyAPICall(credentials: self.credentials).getQRCodes() { (credentials: Credentials?, qrCodeData: [QRCode]?) in
             DispatchQueue.main.async {
+                self.setCredentials(credentials: credentials)
                 if qrCodeData != nil {
                     self.qrcodes = qrCodeData!
-                    self.setCredentials(credentials: credentials)
                 }
             }
         }
@@ -70,9 +70,7 @@ class QRCodeStore: ObservableObject {
                     // FOR NOW: make REST call to update qrode if appropriate
                     try QwertyAPICall(credentials: self.credentials).updateQrcode(qrcode: replacement_item.qr_code!) { (credentials: Credentials?, qrcodeData: QRCode?) in
                         DispatchQueue.main.async {
-                            if qrcodeData != nil {
-                                self.setCredentials(credentials: credentials)
-                            }
+                            self.setCredentials(credentials: credentials)
                         }
                     }
                     
@@ -89,9 +87,9 @@ class QRCodeStore: ObservableObject {
         // recreate the QwertyAPI object each time as the viewRouter credentials may have changed
         try QwertyAPICall(credentials: self.credentials).getItems() { (credentials: Credentials?, itemData: [Item]?) in
             DispatchQueue.main.async {
+                self.setCredentials(credentials: credentials)
                 if itemData != nil {
                     self.items = itemData!
-                    self.setCredentials(credentials: credentials)
                 }
             }
         }

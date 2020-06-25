@@ -9,7 +9,9 @@
 import Foundation
 
 enum QwertyAPIError: Error {
+    case unknownError
     case credentialsRequired
+    case unauthorizedRequest
 }
 
 
@@ -24,7 +26,8 @@ class QwertyAPICall {
     }
     
     private func getUrl(path: String) -> URL?{
-        let server_url = "https://879383e4cb94.ngrok.io"
+        // let server_url = "https://b471e9480d0e.ngrok.io"
+        let server_url = "https://qrtee.herokuapp.com"
         return URL(string: "\(server_url)\(path)")
     }
     
@@ -54,7 +57,7 @@ class QwertyAPICall {
                 
                 do {
                    let userData = try decoder.decode(T.self, from: data)
-                    let creds = Credentials(uid: response.headers["uid"]!, client_id: response.headers["client"]!, token: response.headers["access-token"]!)
+                    let creds = Credentials(uid: response.headers[caseInsensitive: "uid"]!, client_id: response.headers[caseInsensitive: "client"]!, token: response.headers[caseInsensitive: "access-token"]!)
                     
                     completion(creds, userData)
                     
@@ -74,6 +77,8 @@ class QwertyAPICall {
                     print("error: ", error)
                 }
 
+            } else {
+                completion(nil, nil)
             }
         }
     }

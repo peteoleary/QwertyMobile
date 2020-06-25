@@ -16,8 +16,8 @@ struct UserData: Codable {
 
 struct User: Codable {
     var id:Int
-    var first_name:String
-    var last_name:String
+    var first_name:String?
+    var last_name:String?
     var email:String
     var nickname:String?
     var image :String?

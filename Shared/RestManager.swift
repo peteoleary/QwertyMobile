@@ -123,6 +123,15 @@ extension RestManager {
         subscript(key: String) -> String? {
             return values[key]
         }
+        
+        subscript(caseInsensitive key: String) -> String? {
+            get {
+                if let k = values.keys.first(where: { $0.caseInsensitiveCompare(key) == .orderedSame }) {
+                    return self[k]
+                }
+                return nil
+            }
+        }
     }
     
     struct Response {
